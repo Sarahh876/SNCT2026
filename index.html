@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça Ada Lovelace, matemática e pioneira da programação.">
+  <title>Ada Lovelace — Uma mente à frente do tempo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Pinyon+Script&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#8B5FBF">
+  <meta property="og:title" content="Ada Lovelace — Uma mente à frente do tempo">
+  <meta property="og:description" content="Biografia, linha do tempo, Nota G interativa e quiz sobre a pioneira da programação.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
+  <script>try{const t=localStorage.getItem("tema");if(t){document.documentElement.dataset.tema=t;document.documentElement.dataset.bsTheme=t==="escuro"?"dark":"light"}}catch(e){}</script>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#menuPrincipal" data-bs-root-margin="0px 0px -40%">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">Ada <span>Lovelace</span><i aria-hidden="true">✦</i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
+            <li class="nav-item"><a class="nav-link" href="#linha-tempo">Linha do tempo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#legado">Legado</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nota-g">Nota G</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+            <li class="nav-item"><a class="nav-link" href="#curiosidades">Curiosidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+            <li class="nav-item"><button id="temaToggle" class="btn-tema" type="button" aria-label="Alternar entre tema claro e escuro">◐</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section-space" id="inicio">
+      <div class="deco-simbolos" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6 hero-copy">
+            <span class="eyebrow"><span>✧</span> MATEMÁTICA · PIONEIRA DA COMPUTAÇÃO</span>
+            <h1>Uma mente<br><em>à frente do tempo.</em></h1>
+            <p class="hero-lead">Ada Lovelace enxergou poesia, música e possibilidades onde outros viam apenas números.</p>
+            <a class="btn btn-primary rounded-pill px-4 py-3" href="#historia">Conheça sua história <span aria-hidden="true">↗</span></a>
+            <div class="hero-note"><span>1815 — 1852</span><span class="note-line"></span><span>Uma história de imaginação</span></div>
+          </div>
+          <div class="col-12 col-lg-6 hero-art">
+            <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+            <figure class="hero-frame">
+              <img src="imagens/ada_corpo_inteiro.jpg" alt="Retrato de corpo inteiro de Ada Lovelace" class="img-fluid" fetchpriority="high">
+              <figcaption><span>Augusta Ada King</span><span>✦</span></figcaption>
+            </figure>
+            <div class="floating-stamp"><span>01</span><small>THE<br>VISIONARY</small></div>
+            <span aria-hidden="true" class="sparkle sparkle-one">✦</span><span aria-hidden="true" class="sparkle sparkle-two">✧</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numeros" aria-label="Ada em números"><div class="container"><div class="row g-3 text-center">
+      <div class="col-6 col-md-3"><div class="numero"><strong data-alvo="36">36</strong><small>anos de vida</small></div></div>
+      <div class="col-6 col-md-3"><div class="numero"><strong data-alvo="7">7</strong><small>notas, de A a G</small></div></div>
+      <div class="col-6 col-md-3"><div class="numero"><strong data-alvo="1843">1843</strong><small>ano da publicação</small></div></div>
+      <div class="col-6 col-md-3"><div class="numero"><strong data-alvo="1">1</strong><small>linguagem com seu nome</small></div></div>
+    </div></div></section>
+
+    <section class="section-space about-section" id="historia">
+      <div class="container">
+        <div class="section-kicker">01 <span>— QUEM FOI</span></div>
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-5">
+            <div class="about-photo">
+              <img src="imagens/adacorpoo.png" alt="Pintura de Ada Lovelace" class="img-fluid rounded-4" loading="lazy">
+              <span class="photo-ornament" aria-hidden="true">❀</span>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <p class="eyebrow">UMA VIDA ENTRE LÓGICA E IMAGINAÇÃO</p>
+            <h2>Ela imaginou o que<br><em>ainda não existia.</em></h2>
+            <p class="body-copy">Augusta Ada King, conhecida como Ada Lovelace, nasceu em Londres em 1815. Matemática e escritora, colaborou intelectualmente com Charles Babbage, que idealizou a Máquina Analítica.</p>
+            <p class="body-copy">Em suas notas sobre a máquina, Ada descreveu um método para calcular números de Bernoulli. Seu trabalho é lembrado como um marco inicial da programação e por sua visão de que máquinas poderiam manipular símbolos, não apenas números.</p>
+            <div class="row g-3 mt-4">
+              <div class="col-6"><article class="mini-card"><span aria-hidden="true">✧</span><strong>Matemática</strong><small>Raciocínio e método.</small></article></div>
+              <div class="col-6"><article class="mini-card"><span aria-hidden="true">❀</span><strong>Imaginação</strong><small>Ideias além do cálculo.</small></article></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divisor" aria-hidden="true"><span>✦ ❀ ✦</span></div>
+
+    <section class="section-space" id="pessoas">
+      <div class="container">
+        <div class="text-center section-heading"><div class="section-kicker justify-content-center">02 <span>— PESSOAS</span></div><h2>Quem moldou <em>sua mente.</em></h2><p class="body-copy mx-auto">Ada cresceu entre poesia, ciência e muita disciplina.</p></div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3"><article class="card legacy-card person-card h-100"><div class="card-body"><span class="card-index">PAI</span><h3 class="card-title">Lord Byron</h3><p class="card-text">Poeta romântico. Ada nunca conviveu com ele: os pais se separaram quando ela tinha poucos meses.</p></div></article></div>
+          <div class="col-12 col-md-6 col-lg-3"><article class="card legacy-card person-card h-100"><div class="card-body"><span class="card-index">MÃE</span><h3 class="card-title">Annabella Milbanke</h3><p class="card-text">Apaixonada por matemática, incentivou a filha a estudar ciências e lógica desde cedo.</p></div></article></div>
+          <div class="col-12 col-md-6 col-lg-3"><article class="card legacy-card person-card h-100"><div class="card-body"><span class="card-index">MENTORAS E MESTRES</span><h3 class="card-title">Somerville e De Morgan</h3><p class="card-text">Mary Somerville a apresentou a Babbage; Augustus De Morgan orientou seus estudos de matemática.</p></div></article></div>
+          <div class="col-12 col-md-6 col-lg-3"><article class="card legacy-card person-card h-100"><div class="card-body"><span class="card-index">PARCEIRO INTELECTUAL</span><h3 class="card-title">Charles Babbage</h3><p class="card-text">Idealizador da Máquina Analítica, o projeto que inspirou as famosas notas de Ada.</p></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space timeline-section" id="linha-tempo">
+      <div class="container">
+        <div class="text-center section-heading">
+          <div class="section-kicker justify-content-center">03 <span>— LINHA DO TEMPO</span></div>
+          <h2>Uma vida em <em>movimento.</em></h2>
+          <p class="body-copy mx-auto">De uma infância curiosa a ideias que atravessaram gerações.</p>
+        </div>
+        <div class="timeline"></div>
+        <p class="timeline-range"><span id="yearsCounter">1815 → 1852</span> <small>37 anos entre duas datas que marcaram a história</small></p>
+      </div>
+    </section>
+
+    <div class="divisor" aria-hidden="true"><span>✦ ❀ ✦</span></div>
+
+    <section class="section-space legacy-section" id="legado">
+      <div class="container">
+        <div class="row align-items-end g-4 mb-4">
+          <div class="col-lg-7"><div class="section-kicker">04 <span>— LEGADO & NOTAS</span></div><h2>O pensamento que<br><em>abriu caminhos.</em></h2></div>
+          <div class="col-lg-5"><p class="body-copy">Ada viu possibilidades que iam além do uso imediato das máquinas. Sua contribuição une precisão matemática e imaginação.</p></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4"><article class="card legacy-card h-100"><div class="card-body"><span class="card-symbol" aria-hidden="true">✧</span><span class="card-index">01 / ALGORITMO</span><h3 class="card-title">Uma sequência de instruções</h3><p class="card-text">Suas notas incluíram um procedimento para calcular números de Bernoulli na Máquina Analítica, frequentemente descrito como o primeiro algoritmo publicado para uma máquina.</p></div></article></div>
+          <div class="col-12 col-md-6 col-lg-4"><article class="card legacy-card h-100"><div class="card-body"><span class="card-symbol" aria-hidden="true">❀</span><span class="card-index">02 / VISÃO</span><h3 class="card-title">Máquinas além dos números</h3><p class="card-text">Ada imaginou que máquinas poderiam trabalhar com símbolos e, em princípio, criar música ou representar outras formas de informação.</p></div></article></div>
+          <div class="col-12 col-md-6 col-lg-4"><article class="card legacy-card h-100"><div class="card-body"><span class="card-symbol" aria-hidden="true">✦</span><span class="card-index">03 / INSPIRAÇÃO</span><h3 class="card-title">Uma referência duradoura</h3><p class="card-text">Seu nome foi dado à linguagem de programação Ada, desenvolvida décadas depois, em reconhecimento à sua contribuição histórica.</p></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section py-5"><div class="container"><figure class="quote-panel rounded-4 text-center"><span class="quote-mark" aria-hidden="true">“</span><blockquote id="citacao"></blockquote><figcaption id="citacaoFonte"></figcaption><div class="quote-nav"><button id="citAnterior" type="button" aria-label="Citação anterior">←</button><button id="citProxima" type="button" aria-label="Próxima citação">→</button></div><span class="quote-flower" aria-hidden="true">✧</span></figure></div></section>
+
+    <section class="section-space nota-section" id="nota-g">
+      <div class="deco-simbolos" aria-hidden="true"></div>
+      <div class="container"><div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6"><div class="section-kicker">05 <span>— NOTA G</span></div><h2>Brinque com os <em>números de Bernoulli.</em></h2><p class="body-copy">Na Nota G, Ada descreveu como a Máquina Analítica poderia calcular números de Bernoulli passo a passo. Escolha um índice e veja o resultado em fração exata, algo que ela precisava planejar à mão.</p></div>
+        <div class="col-12 col-lg-6"><div class="nota-panel">
+          <label for="nBernoulli" class="eyebrow">ÍNDICE PAR: <span id="nValor">8</span></label>
+          <input type="range" class="form-range my-3" id="nBernoulli" min="2" max="20" step="2" value="8">
+          <output id="bernoulliResultado" class="bernoulli-out" for="nBernoulli"></output>
+        </div></div>
+      </div></div>
+    </section>
+
+    <div class="divisor" aria-hidden="true"><span>✦ ❀ ✦</span></div>
+
+    <section class="section-space gallery-section" id="galeria">
+      <div class="container">
+        <div class="section-heading text-center">
+          <div class="section-kicker justify-content-center">06 <span>— GALERIA</span></div>
+          <h2>Fragmentos de <em>uma história.</em></h2>
+         
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+          <div class="col"><figure class="gallery-card"><img src="imagens/ada_criança.jpg" alt="Gravura de Ada Lovelace quando criança" class="img-fluid" loading="lazy"><figcaption>Gravura de Ada Lovelace quando criança, baseada em um desenho de Frank Stone, por William Henry Mote, 1832.</figcaption></figure></div>
+          <div class="col"><figure class="gallery-card"><img src="imagens/pintura.jpeg" alt="Pintura de Ada Lovelace aos vinte anos" class="img-fluid" loading="lazy"><figcaption>Pintura de Ada aos vinte anos, por Margaret S. Carpenter (1836)</figcaption></figure></div>
+          <div class="col"><figure class="gallery-card"><img src="imagens/calculos.webp" alt="Diagrama de Ada para calcular números de Bernoulli" class="img-fluid" loading="lazy"><figcaption>Parte inicial do diagrama elaborado por Ada Lovelace em 1842 para o cálculo dos números de Bernoulli.</figcaption></figure></div>
+          <div class="col"><figure class="gallery-card"><img src="imagens/maquina_analitica2.avif" alt="Parte da Máquina Analítica de Charles Babbage" class="img-fluid" loading="lazy"><figcaption>Parte da “máquina analítica” de Charles Babbage construída na década de 1830, atualmente exposta no Museu da Ciência em Londres.</figcaption></figure></div>
+          <div class="col"><figure class="gallery-card"><img src="imagens/eniac.webp" alt="O eniac" class="img-fluid" loading="lazy"><figcaption>O ENIAC, que seguiu um padrão de cálculo semelhante ao elaborado por Ada Lovelace para os números de Bernoulli.</figcaption></figure></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divisor" aria-hidden="true"><span>✦ ❀ ✦</span></div>
+
+    <section class="section-space curiosity-section" id="curiosidades">
+      <div class="container">
+        <div class="section-heading text-center">
+          <div class="section-kicker justify-content-center">07 <span>— CURIOSIDADES</span></div>
+          <h2>Pequenos detalhes, <em>grandes ideias.</em></h2>
+        </div>
+        <div class="accordion custom-accordion mt-4" id="curiosities">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#curiosityOne" aria-expanded="true" aria-controls="curiosityOne">Por que Ada é lembrada como pioneira da programação?</button></h3><div id="curiosityOne" class="accordion-collapse collapse show" data-bs-parent="#curiosities"><div class="accordion-body">Suas notas de 1843 descrevem um algoritmo destinado à Máquina Analítica, razão pela qual ela é frequentemente reconhecida como a primeira programadora. Historiadores debatem o título, mas ninguém discute a importância de suas notas.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#curiosityTwo" aria-expanded="false" aria-controls="curiosityTwo">O que era a Máquina Analítica?</button></h3><div id="curiosityTwo" class="accordion-collapse collapse" data-bs-parent="#curiosities"><div class="accordion-body">Era um projeto de máquina mecânica de uso geral idealizado por Charles Babbage. Nunca foi concluída em vida deles, mas antecipava conceitos importantes da computação.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#curiosityThree" aria-expanded="false" aria-controls="curiosityThree">Ada também se interessava por arte?</button></h3><div id="curiosityThree" class="accordion-collapse collapse" data-bs-parent="#curiosities"><div class="accordion-body">Sim. Ela buscava aproximar o raciocínio matemático da imaginação e refletia sobre como máquinas poderiam manipular símbolos e até produzir música.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="false" aria-controls="c4">O que é a Nota G?</button></h3><div id="c4" class="accordion-collapse collapse" data-bs-parent="#curiosities"><div class="accordion-body">É a última das notas de Ada (A a G) sobre a Máquina Analítica. Nela, ela detalha as operações para calcular números de Bernoulli, o trecho mais citado como “o primeiro programa”.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="false" aria-controls="c5">Ada foi condessa?</button></h3><div id="c5" class="accordion-collapse collapse" data-bs-parent="#curiosities"><div class="accordion-body">Sim. Em 1835 casou-se com William King, que em 1838 recebeu o título de conde de Lovelace. Assim, ela passou a ser Condessa de Lovelace.</div></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section-space quiz-section" id="quiz">
+      <div class="deco-simbolos" aria-hidden="true"></div>
+      <div class="container">
+        <div class="text-center section-heading"><div class="section-kicker justify-content-center">08 <span>— QUIZ</span></div><h2>Quanto você <em>aprendeu?</em></h2></div>
+        <div class="quiz-panel" id="quizBox"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <a class="navbar-brand" href="#inicio">Ada <span>Lovelace</span><i aria-hidden="true">✦</i></a>
+      <p class="mb-0">Feito por Sarah e Késia com cuidado e <span class="heart" aria-hidden="true">♥</span> para celebrar uma mente extraordinária.</p>
+      <small>© <span id="currentYear">2026</span> · Projeto SNCT </small>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
