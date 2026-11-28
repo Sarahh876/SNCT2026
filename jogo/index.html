@@ -23,6 +23,7 @@
           <button id="btn-jogar" class="btn dourado">Jogar</button>
           <button id="btn-continuar" class="btn" hidden>Continuar</button>
           <button id="btn-como" class="btn">Como jogar</button>
+          <button id="btn-ranking" class="btn">🏆 Ranking</button>
           <a class="btn" href="../index.html" style="text-decoration:none;display:inline-block">← Voltar ao site</a>
         </div>
       </div>
@@ -133,10 +134,28 @@
       <p class="subtitulo">Você acompanhou Ada da Londres de 1815 até o legado que inspirou a computação.</p>
       <div class="estrelas" id="vit-estrelas"></div>
       <div class="vit-numeros"><div><b id="vit-pontos">0</b><small>pontos</small></div><div><b id="vit-pistas">0</b><small>pistas</small></div></div>
+       <div class="rk-form">
+  <input id="rk-nome" type="text" maxlength="20" placeholder="Seu nome" autocomplete="off">
+  <button id="rk-salvar" class="btn dourado">Salvar no ranking</button>
+</div>
+<p id="rk-msg" class="rk-msg"></p>
       <blockquote>“A imaginação é a faculdade da descoberta.”<cite>— Ada Lovelace, carta de 1841 (tradução livre)</cite></blockquote>
       <div class="botoes"><button id="btn-de-novo" class="btn dourado">Jogar novamente</button><button id="btn-vit-inicio" class="btn">Menu inicial</button></div>
     </div>
   </section>
+
+  <!-- Ranking -->
+<div id="ranking" class="sobreposicao" hidden>
+  <div class="cartao estreito"><div class="cartao-corpo">
+    <p class="sobretitulo">✦ Ranking ✦</p>
+    <h2>Melhores exploradores</h2>
+    <ol id="rk-lista" class="rk-lista"></ol>
+    <div class="botoes coluna">
+  <button class="btn dourado" data-fechar="ranking">Fechar</button>
+  <button id="rk-limpar" class="btn">Apagar ranking</button>
+</div>
+  </div></div>
+</div>
 
   <div id="toast" hidden></div>
 

@@ -141,6 +141,7 @@ let tempo = 0, avisoPorta = 0, emJogo = false, capturada = false;
 const teclas = {};
 const joy = { x: 0, y: 0 };
 addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT') return;
   const k = e.key.toLowerCase();
   if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' '].includes(k)) e.preventDefault();
   teclas[k] = true;
@@ -581,6 +582,7 @@ function concluirFase() {
 function mostrarVitoria() {
   const p = pontosTotais(), pct = p / PONTOS_MAX, n = pct >= .85 ? 3 : pct >= .6 ? 2 : 1;
   $('#vit-pontos').textContent = p; $('#vit-pistas').textContent = `${pistasTotais()}/${TOTAL_PISTAS}`;
+  $('#rk-salvar').disabled = false; $('#rk-msg').textContent = '';
   $('#vit-estrelas').innerHTML = [1, 2, 3].map((k) => `<span class="${k <= n ? '' : 'vazia'}">★</span>`).join('');
   mostrar('vitoria');
 }
@@ -589,6 +591,39 @@ function reiniciarFase() { const i = estado.fase; estado.resolvidas[i] = []; est
 function irParaInicio() { $('#menu').hidden = true; $('#modal').hidden = true; mostrar('tela-inicial'); $('#btn-continuar').hidden = !(temSave() && !estado.completo); }
 function temSave() { try { return !!localStorage.getItem(CHAVE_SAVE); } catch (e) { return false; } }
 function criarBrilhos(el) { for (let k = 0; k < 30; k++) { const i = document.createElement('i'); i.style.left = Math.random() * 100 + '%'; i.style.animationDuration = 6 + Math.random() * 9 + 's'; i.style.animationDelay = -Math.random() * 12 + 's'; el.append(i); } }
+
+/* ---------- Ranking ---------- */
+const RANKING_URL = '';  // vazio = ranking só neste aparelho. Para ranking online, coloque a URL do Firebase (sem barra no final)
+const RK_CHAVE = 'ada-ranking', RK_MAX = 10;
+const lerLocal = () => { try { return JSON.parse(localStorage.getItem(RK_CHAVE)) || []; } catch (e) { return []; } };
+async function lerRanking() {
+  if (RANKING_URL) {
+    try {
+      const r = await fetch(`${RANKING_URL}/ranking.json?orderBy="pontos"&limitToLast=${RK_MAX}`);
+      return Object.values(await r.json() || {}).sort((a, b) => b.pontos - a.pontos);
+    } catch (e) { /* sem internet: mostra o ranking deste aparelho */ }
+  }
+  return lerLocal().sort((a, b) => b.pontos - a.pontos).slice(0, RK_MAX);
+}
+async function salvarNoRanking(nome, pontos) {
+  const reg = { nome, pontos, data: Date.now() };
+  if (RANKING_URL) {
+    try { await fetch(`${RANKING_URL}/ranking.json`, { method: 'POST', body: JSON.stringify(reg) }); return; } catch (e) { /* cai no local */ }
+  }
+  const l = lerLocal(); l.push(reg); l.sort((a, b) => b.pontos - a.pontos);
+  try { localStorage.setItem(RK_CHAVE, JSON.stringify(l.slice(0, 50))); } catch (e) { /* sem localStorage */ }
+}
+async function abrirRanking() {
+  const ol = $('#rk-lista'); $('#ranking').hidden = false;
+  ol.innerHTML = '<li class="vazio"><span>Carregando…</span></li>';
+  const lista = await lerRanking(); ol.innerHTML = '';
+  if (!lista.length) { ol.innerHTML = '<li class="vazio"><span>Ninguém no ranking ainda. Seja o primeiro!</span></li>'; return; }
+  lista.forEach((r) => {
+    const li = document.createElement('li'), n = document.createElement('span'), p = document.createElement('b');
+    n.textContent = r.nome; p.textContent = r.pontos + ' pts';   // textContent evita código malicioso nos nomes
+    li.append(n, p); ol.append(li);
+  });
+}
 
 /* ---------- Botões e inicialização ---------- */
 const btnSom = $('#btn-som');
@@ -603,7 +638,24 @@ $('#btn-capturada-menu').onclick = () => { $('#capturada').hidden = true; irPara
 $('#btn-menu').onclick = () => { $('#menu').hidden = false; };
 $('#menu-como').onclick = () => { $('#como').hidden = false; };
 $('#menu-inicio').onclick = irParaInicio;
+$('#menu-inicio').onclick = irParaInicio;
+$('#btn-ranking').onclick = abrirRanking;
+$('#rk-limpar').onclick = () => {
+  if (RANKING_URL) { alert('O ranking online só pode ser apagado pelo painel do Firebase (aba Data → apagar o item "ranking").'); return; }
+  if (!confirm('Apagar todo o ranking deste aparelho? Isso não pode ser desfeito.')) return;
+  try { localStorage.removeItem(RK_CHAVE); } catch (e) { /* sem localStorage */ }
+  abrirRanking();
+};
+$('#rk-salvar').onclick = async () => {
+  const nome = $('#rk-nome').value.trim().slice(0, 20);
+  if (!nome) { $('#rk-msg').textContent = 'Digite seu nome para entrar no ranking.'; return; }
+  $('#rk-salvar').disabled = true;
+  await salvarNoRanking(nome, pontosTotais());
+  $('#rk-msg').textContent = 'Pontuação salva! ✦';
+  abrirRanking();
+};
 $('#btn-de-novo').onclick = novoJogo;
+$('#btn-vit-inicio').onclick = irParaInicio;
 $('#btn-vit-inicio').onclick = irParaInicio;
 document.querySelectorAll('[data-fechar]').forEach((b) => { b.onclick = () => { $('#' + b.dataset.fechar).hidden = true; }; });
 criarBrilhos($('#brilhos')); criarBrilhos($('#brilhos2'));

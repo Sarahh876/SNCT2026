@@ -139,3 +139,14 @@ blockquote cite{display:block;font:.75rem var(--sans);opacity:.7;margin-top:.4re
 /* Botão de som */
 #btn-som { position: fixed; left: 12px; bottom: 12px; z-index: 50; width: 42px; height: 42px; border-radius: 50%; border: 2px solid #d8b45a; background: rgba(40, 18, 60, .85); color: #f6d98f; font-size: 20px; cursor: pointer; }
 #btn-som.mudo { opacity: .6; }
+
+/* Ranking */
+.rk-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1rem 0 .3rem}
+.rk-form input{font:600 1rem var(--sans);padding:.8rem 1.1rem;border-radius:999px;border:1.5px solid var(--dourado);background:rgba(29,15,51,.7);color:var(--bege);-webkit-user-select:text;user-select:text;min-width:200px}
+.rk-msg{text-align:center;color:var(--dourado2);min-height:1.4em;font-size:.9rem}
+.rk-lista{list-style:none;margin:.5rem 0 1rem;counter-reset:rk}
+.rk-lista li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem .2rem;border-bottom:1px solid rgba(224,178,90,.25);color:var(--bege)}
+.rk-lista li::before{counter-increment:rk;content:counter(rk) "º";color:var(--dourado);min-width:2rem}
+.rk-lista li span{flex:1;overflow-wrap:anywhere}
+.rk-lista li b{color:var(--dourado2)}
+.rk-lista li.vazio::before{content:none}
