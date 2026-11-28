@@ -1,0 +1,24 @@
+O jogo já tem uma música de fundo embutida (caixinha de música, composição original) que toca
+sozinha em todas as telas. Ela só deixa de tocar numa tela se você colocar o .mp3 daquela tela aqui.
+
+fundo.mp3 já está na pasta: é a música "Mysterious Victorian Adventure" (2:50) e toca no jogo TODO
+(menu, fases, perguntas e vitória), sem recomeçar ao trocar de tela.
+O final dela foi misturado com o começo (crossfade de 8 s), então quando ela repete a emenda não se percebe.
+Os efeitos continuam, e quando o monstro chega perto o pulso grave com tique-taque entra por cima.
+(A caixinha de música embutida só toca se você mudar USAR_CAIXINHA para true em js/audio.js.)
+
+OPCIONAL — coloque aqui os arquivos de música (formato .mp3), com EXATAMENTE estes nomes:
+
+menu.mp3         tela inicial            ex.: Clair de Lune (Debussy) / Noturno Op. 9 nº 2 (Chopin)
+fase1.mp3        fase 1 (infância)       ex.: Prelúdio em Dó maior (Bach) / Für Elise (Beethoven)
+fase2.mp3        fase 2 (Babbage)        ex.: Dança da Fada Açucarada (Tchaikovsky) / Scherzo do Sonho de uma Noite de Verão (Mendelssohn)
+fase3.mp3        fase 3 (Nota G/legado)  ex.: Nimrod (Elgar) / Ode à Alegria (Beethoven)
+desafio.mp3      durante as perguntas    ex.: Gymnopédie nº 1 (Satie)
+perseguicao.mp3  monstro se aproximando  ex.: Na Gruta do Rei da Montanha (Grieg) / Verão: Presto (Vivaldi)
+vitoria.mp3      tela final              ex.: Ode à Alegria (Beethoven) / fanfarra curta
+
+- Se faltar algum arquivo, o jogo continua normalmente, só sem aquela faixa.
+- Os efeitos (acerto, erro, pista, captura, monstro derrotado) já são gerados pelo código.
+- A faixa "perseguicao" toca por cima da música da fase e vai ficando mais alta quanto mais perto o monstro está.
+- Gravações livres: Musopen, IMSLP, Kevin MacLeod (incompetech), FreePD, OpenGameArt.
+- O navegador só libera som depois do primeiro clique/toque do jogador.
